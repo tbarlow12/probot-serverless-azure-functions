@@ -1,0 +1,48 @@
+{
+  "name": "@probot/serverless-azure-functions",
+  "version": "0.0.1",
+  "description": "An extension for running Probot in Azure Functions",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest && standard"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tbarlow12/serverless-azure-functions.git"
+  },
+  "devDependencies": {
+    "jest": "^23.6.0",
+    "probot": "^7.5.1",
+    "standard": "^10.0.3"
+  },
+  "peerDependencies": {
+    "probot": "^7.5.1"
+  },
+  "engines": {
+    "node": ">= 8.10.0",
+    "npm": ">= 5.0.0"
+  },
+  "keywords": [
+    "lambda",
+    "probot",
+    "github"
+  ],
+  "standard": {
+    "env": [
+      "jest"
+    ]
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "setupFiles": [
+      "./tests/setup.js"
+    ]
+  },
+  "author": "Tanner Barlow <tanner.barlow.dev@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tbarlow12/serverless-azure-functions/issues"
+  },
+  "homepage": "https://github.com/probot/serverless-azure-functions#readme",
+  "dependencies": {}
+}

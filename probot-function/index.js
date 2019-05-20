@@ -44,14 +44,14 @@ module.exports.serverless = appFn => {
     probot = probot || loadProbot(appFn)
 
     // Determine incoming webhook event type
-    const headers = lowerCaseKeys(req.headers)
-    const e = headers['x-github-event']
+    const headers = req.headers && lowerCaseKeys(req.headers)
+    const e = headers ? headers['x-github-event'] : 'none'
 
     // Convert the payload to an Object if API Gateway stringifies it
     req.body = (typeof req.body === 'string') ? JSON.parse(req.body) : req.body
 
     // Do the thing
-    console.log(`Received event ${e}${req.body.action ? ('.' + req.body.action) : ''}`)
+    console.log(`Received event ${e}${(req.body && req.body.action) ? ('.' + req.body.action) : ''}`)
     if (req) {
       try {
         await probot.receive({
